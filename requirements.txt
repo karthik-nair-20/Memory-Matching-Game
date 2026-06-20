@@ -1,0 +1,7 @@
+deepface
+tf-keras
+opencv-python
+pandas
+numpy
+imageio
+imageio-ffmpeg

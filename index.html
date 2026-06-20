@@ -4,26 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Matching Game</title>
+    <title>Memory & Cognitive Load Study</title>
     <link rel="shortcut icon" type="image/jpg" href="Images/fevicon.PNG"/>
     <link rel="stylesheet" href="gameStyle.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
-    <script src="gameScript.js"> </script>
 </head>
 <body>
-    <div id="ol"> </div>
-    <div style="height: 8px;"></div>
-    <div id="title">
-    <span id="logo">MEMORY MATCHING GAME</span>
-    </div>
+    <!-- Welcome -->
+    <section id="welcome" class="screen card">
+        <h1 id="study-title"></h1>
+        <p id="study-description"></p>
+        <p id="study-duration" class="muted"></p>
+        <button id="start-btn">Start</button>
+    </section>
 
-    <div id="title" style="height: 40px;">
-        <span id="moves"></span>
-        <span id="time"></span>
-    </div>
+    <!-- Consent -->
+    <section id="consent" class="screen card">
+        <h2>Consent Form</h2>
+        <p>This study involves playing two short memory matching games and
+           answering a brief survey after each one.</p>
+        <ul>
+            <li><strong>Webcam recording:</strong> your webcam will be recorded
+                while you play each game.</li>
+            <li><strong>Voluntary:</strong> participation is entirely voluntary.</li>
+            <li><strong>Withdraw any time:</strong> you may stop and close this
+                page at any point.</li>
+        </ul>
+        <label class="consent-check">
+            <input type="checkbox" id="consent-checkbox"/>
+            I agree to participate in this study
+        </label>
+        <button id="consent-continue">Continue</button>
+    </section>
 
-    <center>
-        <table cellspacing="0"></table>
-    </center>
+    <!-- Webcam permission / error -->
+    <section id="webcam-error" class="screen card">
+        <h2>Camera Access</h2>
+        <p id="webcam-status">Requesting camera access…</p>
+        <button id="webcam-retry" style="display:none;">Try Again</button>
+    </section>
+
+    <!-- Easy game -->
+    <section id="easy-game" class="screen game-screen">
+        <h2 class="game-heading">Easy Game</h2>
+        <div id="easy-board"></div>
+    </section>
+
+    <!-- Survey #1 -->
+    <section id="survey-1" class="screen card">
+        <div id="survey-1-content"></div>
+    </section>
+
+    <!-- Hard game -->
+    <section id="hard-game" class="screen game-screen">
+        <h2 class="game-heading">Hard Game</h2>
+        <div id="hard-board"></div>
+    </section>
+
+    <!-- Survey #2 -->
+    <section id="survey-2" class="screen card">
+        <div id="survey-2-content"></div>
+    </section>
+
+    <!-- Thank you -->
+    <section id="thank-you" class="screen card">
+        <h2>Thank You!</h2>
+        <p>The study has been completed successfully. We appreciate your
+           participation.</p>
+        <button id="download-json">Download Survey Results (JSON)</button>
+        <button id="download-video">Download Video Recording</button>
+    </section>
+
+    <!-- Scripts: config first, then components, then orchestrator -->
+    <script src="config.js"></script>
+    <script src="webcamRecorder.js"></script>
+    <script src="timer.js"></script>
+    <script src="survey.js"></script>
+    <script src="game.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

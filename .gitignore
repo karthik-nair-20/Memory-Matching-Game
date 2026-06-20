@@ -1,0 +1,28 @@
+# Participant data captured at runtime — never commit.
+videos/
+data/
+
+# Generated emotion-analysis artifacts.
+results/
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+</content>
